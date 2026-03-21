@@ -496,3 +496,11 @@ KLING_SECRET_KEY=...            # Kling 3.0
 5. Run anchor generation → B-roll generation → assembly → polish
 6. Review at each gate per Rule Set 5
 
+### Learning 14: Security — API Keys & Git (2026-03-21)
+- **NEVER commit API keys** to git — even in `.md` files
+- `.env` is in `.gitignore` but `env.md` was NOT — it contained all keys in plaintext
+- GitHub secret scanning blocked the push (detected OpenAI key)
+- Fix: `git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch env.md'` to purge from history
+- **Rule**: Add ALL env/key files to `.gitignore` before first commit. Currently excluded: `.env`, `env.md`, `credentials.json`, `token.json`
+- **Git repo**: `kaushiks27/Reel_Pipeline_V1`
+
