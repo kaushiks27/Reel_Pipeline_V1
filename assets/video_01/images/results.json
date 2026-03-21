@@ -1,0 +1,44 @@
+[
+  {
+    "id": "a1_hook",
+    "title": "A1 \u2014 Hook",
+    "file": "assets/video_01/images/a1_hook/anchor.png",
+    "status": "REUSED"
+  },
+  {
+    "id": "a2_index_finger",
+    "title": "A2 \u2014 Speaking",
+    "file": "assets/video_01/images/a2_index_finger/anchor.png",
+    "status": "REUSED"
+  },
+  {
+    "id": "a3_three_fingers",
+    "title": "A3 \u2014 Three Fingers",
+    "file": "assets/video_01/images/a3_three_fingers/anchor.png",
+    "status": "REUSED"
+  },
+  {
+    "id": "a4_cta_hands_clasped",
+    "title": "A4 \u2014 CTA",
+    "file": "assets/video_01/images/a4_cta_hands_clasped/anchor.png",
+    "status": "REUSED"
+  },
+  {
+    "id": "b1_safety",
+    "title": "B1 \u2014 Rule 1: Study Desk Scene \u2192 SAFETY",
+    "file": "assets/video_01/images/b1_safety/broll_image.png",
+    "status": "OK"
+  },
+  {
+    "id": "b2_understanding",
+    "title": "B2 \u2014 Rule 2: Notebook Scene \u2192 UNDERSTANDING",
+    "file": "assets/video_01/images/b2_understanding/broll_image.png",
+    "status": "OK"
+  },
+  {
+    "id": "b3_belief",
+    "title": "B3 \u2014 Rule 3: High-Five Scene \u2192 BELIEF",
+    "file": "assets/video_01/images/b3_belief/broll_image.png",
+    "status": "OK"
+  }
+]

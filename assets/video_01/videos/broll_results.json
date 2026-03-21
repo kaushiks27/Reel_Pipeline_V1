@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b1_safety",
+    "title": "B1 \u2014 RULE 1 B-ROLL: \"Safety\" [00:08 \u2192 00:12]",
+    "file": "assets/video_01/videos/b1_safety/broll_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "b2_understanding",
+    "title": "B2 \u2014 RULE 2 B-ROLL: \"Understanding\" [00:16 \u2192 00:20]",
+    "file": "assets/video_01/videos/b2_understanding/broll_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "b3_belief",
+    "title": "B3 \u2014 RULE 3 B-ROLL: \"Belief\" [00:24 \u2192 00:28]",
+    "file": "assets/video_01/videos/b3_belief/broll_video.mp4",
+    "status": "OK"
+  }
+]

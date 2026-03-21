@@ -1,0 +1,10 @@
+# Intermediates — regenerated, never committed
+.tmp/
+
+# Secrets
+.env
+credentials.json
+token.json
+
+# OS
+.DS_Store

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "a1_hook",
+    "title": "A1 \u2014 HOOK [00:00 \u2192 00:04]",
+    "file": "assets/video_01/videos/a1_hook/anchor_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "a2_rule1_speaking",
+    "title": "A2 \u2014 RULE 1 LEAD [00:04 \u2192 00:08]",
+    "file": "assets/video_01/videos/a2_rule1_speaking/anchor_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "a3_rule2_speaking",
+    "title": "A3 \u2014 RULE 2 LEAD [00:12 \u2192 00:16]",
+    "file": "assets/video_01/videos/a3_rule2_speaking/anchor_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "a4_rule3_speaking",
+    "title": "A4 \u2014 RULE 3 LEAD [00:20 \u2192 00:24]",
+    "file": "assets/video_01/videos/a4_rule3_speaking/anchor_video.mp4",
+    "status": "OK"
+  },
+  {
+    "id": "a5_cta",
+    "title": "A5 \u2014 CTA [00:28 \u2192 00:32]",
+    "file": "assets/video_01/videos/a5_cta/anchor_video.mp4",
+    "status": "OK"
+  }
+]
