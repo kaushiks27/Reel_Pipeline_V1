@@ -2,7 +2,7 @@
 
 > Type: **Project SOP — NON-NEGOTIABLE**
 > Status: **ACTIVE**
-> Last updated: 2026-03-21
+> Last updated: 2026-03-23
 
 ---
 
@@ -97,6 +97,83 @@ Before generating ANY asset (image, video, audio), check all rules above. If the
 1. **STOP immediately**
 2. **Report the deviation** to the user
 3. **Wait for instruction** before proceeding
+
+### Rule Set 9: Client Critical Feedback (NON-NEGOTIABLE — 2026-03-23)
+
+> **Source**: Direct client feedback. These are permanent production rules for ALL videos going forward. Violating any of these is a blocker for client acceptance.
+
+#### 9.1 Language & Audio Stability
+- **ALL dialogue must be in PURE ENGLISH ONLY.** No Filipino accent. No Tagalog. No code-switching.
+- **CRITICAL (2026-03-23)**: Specifying "Filipino accent" or "Filipino-English accent" in Veo 3.1 voice prompts causes the model to inject Tagalog words and stutter/repeat dialogue. This is a **non-negotiable blocker**.
+- Audio delivery must sound **stable and fluid** — never choppy or laggy.
+- If generated audio has stuttering, repeated words, Tagalog, or choppy cadence → **reject and regenerate immediately**.
+- **NEW Voice blueprint**: `"Warm maternal tone, clear English, medium pace, gentle authority. Brief pauses before key phrases as if thinking."`
+- **BANNED from voice prompts**: "Filipino", "Tagalog", "accent", "dialect", any non-English language reference
+
+#### 9.2 Typography — Premium & Cinematic
+- **LOCKED FONT**: `Kalam-Bold.ttf` (handwritten/calligraphic bold) at `assets/fonts/Kalam-Bold.ttf`
+- Font style must feel **high-end and cinematic** — like a professional movie or a well-told story.
+- **Never use generic, basic, or "tech/startup" fonts** (including Poppins). The feel must be warm, editorial, and story-like.
+- All text overlays must reinforce the premium cinematic feel.
+- Font sizes: Line 1 = 44px white, Line 2 = 50px yellow (#FFD700), shadow offset 3px, alpha 200
+
+#### 9.3 Camera Work — Very Gradual Zoom Only
+- **NO noticeable zoom-in/zoom-out** on anchor scenes. The only acceptable camera movement is a **very gradual, almost imperceptible slow push-in** (dolly) over the full clip duration.
+- If the zoom is noticeable to a casual viewer → **reject and regenerate**.
+- Prompt wording: use "near-static", "extremely subtle push-in", "barely perceptible dolly in" — NEVER "slow dolly in" alone (Veo interprets this as too fast).
+- **Gold standard**: The A3 (Rule 2) anchor video — smooth, barely-moving camera. Use this as the quality bar.
+- If a generated video has any zoom oscillation (in/out/in) → **reject immediately**.
+- B-roll camera: gentle, organic movement only (no rapid zooms, no whip pans).
+
+#### 9.4 Illustration Quality — Reject Unnatural Poses
+- ALL AI-generated scenes must look **natural and believable** within the art style.
+- Any scene that looks "off" or unnatural must be **replaced or refined** before delivery.
+- **Specific red flag**: characters performing awkward/unrealistic actions (e.g., clapping while staring at a light bulb). These must be caught during review and regenerated.
+- **Rule**: After every B-roll image generation, critically evaluate: "Does this look like something a real person would naturally do?" If no → regenerate with a more natural action.
+
+#### 9.5 Pacing & Transitions — Balanced ~4s Rhythm
+- Scene transitions must occur roughly **every 4 seconds**. This is the target rhythm.
+- **No scene should exceed 5 seconds** on screen. If an anchor clip is 6-8 seconds, it must be trimmed or split.
+- **No scene should be shorter than 2 seconds** — if a B-roll clip is only 1-2 seconds, extend it or adjust the cut point.
+- Target balance: every clip in the final timeline should be **3-5 seconds** in duration.
+- Unbalanced pacing (e.g., 8s anchor then 1s B-roll) is explicitly **rejected by the client**.
+
+#### 9.6 Veo 3.1 Anti-Stutter — NO Repeated Words (NON-NEGOTIABLE)
+- Veo 3.1 sometimes causes the character to **repeat the same word/phrase multiple times** (sounds like stuttering). This is a critical defect — **reject and regenerate immediately**.
+- **Root cause**: Dialogue that is too long, has complex sentence structure, or contains quoted-within-quoted speech.
+- **Prevention rules**:
+  1. Keep dialogue to **≤8 words per clip** (stricter than the previous ≤10 limit)
+  2. Use simple, direct sentence structure — no nested quotes or parenthetical phrases
+  3. Place `...` pauses between every 2-3 words to give Veo natural breathing room
+  4. Avoid words that are hard to lip-sync (long multisyllabic words, tongue twisters)
+  5. Test pattern: `"[2-3 words]... '[2-3 word phrase].'"` — this is the proven safe structure
+- **Gold standard**: The A3 (Rule 2) video (`"Number two... 'Let them choose the book.'"`) — zero repeated words, clean delivery. Model ALL anchor prompts after this.
+- **If a video has ANY word repetition** → reject, do NOT deliver to client
+
+### Rule Set 10: Video QA Checklist (NON-NEGOTIABLE — 2026-03-23)
+
+> **Source**: Generalized from client review feedback. Apply as standing checks for EVERY generated video before presenting for approval.
+
+#### 10.1 Character Differentiation
+- Characters in the same scene **must be visually distinct**. Avoid generating faces that look alike for different characters (e.g., mother and child must have clearly different facial features, proportions, and age-appropriate appearance).
+- **Check**: After every B-roll image generation, verify that each character is immediately distinguishable.
+
+#### 10.2 Audio Pacing & Lip-Sync Naturalness
+- Speech in anchor videos must have **natural, conversational pacing**. No unnatural or unusually long pauses between words/phrases.
+- If generated dialogue sounds robotic, halting, or has dead gaps → **reject and regenerate**.
+
+#### 10.3 Anchor Eye-Line / Gaze Direction
+- The anchor **must maintain direct eye contact with the camera at all times** (unless the script explicitly calls for looking elsewhere).
+- Off-camera gaze breaks immersion → **reject and regenerate**.
+
+#### 10.4 Emotional Consistency Between Characters
+- Every character's facial expression **must match the emotional context of the scene**.
+- If a scene depicts a child complaining, the parent must NOT be smiling. If a scene depicts an upset child being comforted, the child must NOT appear happy.
+- **Check**: Review each generated frame for emotional coherence across ALL characters present.
+
+#### 10.5 Emotional Consistency Across Scene Types
+- B-roll scenes depicting conflict, sadness, or frustration **must NOT show positive expressions** (smiling, laughing) unless the narrative has shifted to resolution.
+- **Check**: Cross-reference the script's intended emotion before approving any generated clip.
 
 ### Rule Set 7: Anchor Video Quality Standard (Veo 3.1)
 
@@ -504,3 +581,45 @@ KLING_SECRET_KEY=...            # Kling 3.0
 - **Rule**: Add ALL env/key files to `.gitignore` before first commit. Currently excluded: `.env`, `env.md`, `credentials.json`, `token.json`
 - **Git repo**: `kaushiks27/Reel_Pipeline_V1`
 
+### Learning 15: Parameterize scripts — don't duplicate per video (2026-03-23)
+- Creating separate `generate_video02_*.py` scripts for each video is not scalable
+- **Future refactor**: Create a single set of pipeline scripts that accept a config file (JSON/YAML) containing topic, dialogue, B-roll prompts, and scene mappings
+- Config-driven approach: `python3 execution/generate_broll.py --config assets/video_02/config.json`
+- **Rule**: When refactoring, ensure output quality is identical to per-video scripts. Config changes only — no logic changes.
+- **Priority**: Do this refactor before Video 03
+
+### Learning 16: Caption font — Kalam Bold (handwritten cinematic) (2026-03-23)
+- Client provided screenshot reference showing a **bold handwritten/calligraphic italic** font style
+- Poppins SemiBold was too clean/corporate — doesn't match the cinematic storytelling feel
+- **New font**: `Kalam-Bold.ttf` (Google Fonts) — warm, handwritten, story-like
+- **Location**: `assets/fonts/Kalam-Bold.ttf`
+- **Rule**: ALL future videos use Kalam Bold for captions, not Poppins SemiBold
+- Font sizes: Line 1 = 44px white, Line 2 = 50px yellow (#FFD700), stronger shadow (3px offset, alpha 200)
+
+### Learning 17: NEVER prompt specific finger counts (2026-03-23)
+- AI video models (both Veo 3.1 and Kling 3.0) **cannot reliably render a specific number of fingers held up**
+- A4 was prompted with "holds up three fingers" but rendered 2 fingers while saying "number three" — visual/audio mismatch
+- **Rule**: NEVER include finger-counting instructions in prompts. Use generic hand gestures instead: "open hand gesture", "gestures warmly", "hands clasped", "explaining gesture"
+- This is a universal AI limitation — apply to ALL video generation prompts
+
+### Learning 18: Anchor character MUST look directly at camera (2026-03-23)
+- A1 (Hook) is the **gold standard** — character looks directly at the camera throughout
+- A2 and A3 had the character occasionally looking away — breaks the intimate storytelling feel
+- **Rule**: Every anchor prompt MUST include "looks directly at the camera" or "maintains eye contact with the camera" as a mandatory instruction
+- **Prompt pattern**: Start every anchor prompt with "Near-static camera, medium close-up, eye-level. The character looks directly at the camera."
+
+### Learning 19: Kling 3.0 is now the PRIMARY anchor video engine (2026-03-23)
+- Veo 3.1 issues: Filipino accent caused Tagalog bleed, word stuttering/repetition, and quota limits (429)
+- Kling 3.0 with `sound: "on"` provides cleaner lip sync with pure English TTS
+- **Rule**: Use Kling 3.0 (`kling-v3`, mode `pro`, sound `on`) as the **primary** engine for anchor videos
+- Veo 3.1 is demoted to backup only
+- API: `POST /v1/videos/image2video` with `sound: "on"` for native TTS lip sync
+
+### Learning 20: REUSE scripts — NEVER duplicate per video (NON-NEGOTIABLE) (2026-03-23)
+- The same execution scripts MUST be reused across all video productions. Creating `generate_video02_*.py`, `generate_video03_*.py`, etc. is **explicitly prohibited**.
+- **How to reuse**: Parameterize scripts via config files (JSON/YAML) or CLI arguments:
+  - `python3 execution/generate_anchor_videos_kling.py --config assets/video_03/config.json`
+  - Config file contains: topic, scenes, prompts, dialogue, output paths
+- **Reason**: Duplicating scripts creates maintenance debt, makes bug fixes harder, and violates the 3-layer architecture (directives → orchestration → deterministic scripts)
+- **Migration plan**: Rename current scripts to generic names (drop `video02_` prefix), add config file support, validate output quality is identical
+- **Priority**: MUST be done before Video 03 production begins
